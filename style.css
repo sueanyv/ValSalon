@@ -1,0 +1,556 @@
+body {
+  height: 100%;
+  font-family: Verdana, Arial, sans-serif;
+  color: black;
+  background-image: url("background.png");
+  line-height: 32px;
+}
+
+#header {
+  height: 20%;
+}
+
+#footer {
+  height: 5%;
+  text-align: center;
+}
+#picsource{
+  color: black;
+  text-decoration: none;
+  font-size: 1vw;
+}
+#picsource:hover {
+  background-color: lightblue;
+}
+#busnesshours {
+  width: 49%;
+  height: 100%;
+  font-size: .8vw;
+  line-height: normal;
+  border-left: 1px solid #ddd;
+  padding-left: 1%;
+  text-align: center;
+  font-family: serif;
+  color: black;
+}
+
+#busnessaddress {
+  width: 49%;
+  float: left;
+  height: 100%;
+  font-size: .8vw;
+  line-height: normal;
+  text-align: center;
+  font-family: serif;
+  color: black;
+}
+
+#buisbox>div {
+  display: inline-block;
+}
+
+#decorbox {
+  width: 100%;
+  height: 30%;
+  background-color: #F2F2F2;
+}
+
+#buisbox {
+  width: 45%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+}
+
+#copyright {
+  font-family: serif;
+  font-size: .8vw;
+  color: black;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.maincontainer {
+  width: 100%;
+}
+
+.toggle,
+[id^=drop] {
+  display: none;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  background-color: #F2F2F2;
+}
+
+.menu {
+  text-align: center;
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  /* float: right; */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  margin: 0px;
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 14px 20px;
+  color: black;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+nav ul li ul li:hover {
+  background: lightblue;
+}
+
+nav a:hover {
+  background-color: lightblue;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+}
+
+nav ul li:hover>ul {
+  display: inherit;
+}
+
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 170px;
+}
+
+li>a:after {
+  content: ' +';
+}
+
+li>a:only-child:after {
+  content: '';
+}
+
+/* Media Queries
+--------------------------------------------- */
+@media all and (max-width : 768px) {
+  #logo {
+    display: block;
+    padding: 0;
+    width: 40%;
+    text-align: center;
+    float: none;
+  }
+
+  nav {
+    margin: 0;
+  }
+
+  .toggle+a,
+  .menu {
+    display: none;
+  }
+
+  /* Stylinf the toggle lable */
+  .toggle {
+    display: block;
+    background-color: #F2F2F2;
+    padding: 14px 20px;
+    color: black;
+    font-size: 17px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .toggle:hover {
+    background-color: lightblue;
+  }
+
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^=drop]:checked+ul {
+    display: block;
+  }
+
+  /* Change menu item's width to 100% */
+  nav ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav a:hover,
+  nav ul ul ul a {
+    background-color: lightblue;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    padding: 14px 20px;
+    color: black;
+    font-size: 17px;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #F2F2F2;
+  }
+
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    float: none;
+    position: static;
+    color: #ffffff;
+    /* has to be the same number as the "line-height" of "nav a" */
+  }
+
+  /* Hide menus on hover */
+  nav ul ul li:hover>ul,
+  nav ul li:hover>ul {
+    display: none;
+  }
+
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+  }
+}
+
+@media all and (max-width : 330px) {
+  nav ul li {
+    display: block;
+    width: 94%;
+  }
+}
+
+/* **************************************|| Home(index) */
+#slider {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+}
+
+/************************ Reference slider code is from https://codepen.io/dudleystorey/pen/ehKpi */
+@keyframes slidy {
+  0% {left: 0%;}
+  20% {left: 0%;}
+  25% {left: -100%;}
+  45% {left: -100%;}
+  50% {left: -200%;}
+  70% {left: -200%;}
+  75% {left: -300%;}
+  95% {left: -300%;}
+  100% {left: -400%;
+  }
+}
+
+div#slider {
+  overflow: hidden;
+}
+
+div#slider figure img {
+  width: 20%;
+  float: left;
+}
+
+div#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite;
+}
+
+#linkscontainer {
+  margin-top: 15%;
+  margin-bottom: 8%;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.piclink {
+  margin-right: 3%;
+  margin-left: 4%;
+  width: 25%;
+}
+
+/* || Services*/
+#tablebox {
+  margin-top: 10%;
+  margin-bottom: 20%;
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+}
+
+.sertable {
+  width: 100%;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.sertable, th, td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+.serth {
+  text-align: center;
+  padding: 4%;
+  background-color: lightblue;
+  width: 80%;
+  font-size: 2vw;
+  font-family: serif;
+  font-weight: bold;
+  color: black;
+}
+
+.sertd {
+  padding: 2%;
+  font-size: 1.7vw;
+  font-family: serif;
+  color: black;
+
+}
+
+/* *****************************||  Designs */
+.designbox {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 67%;
+  padding-top: 6%;
+}
+
+#destitle {
+  font-size: 3.5vw;
+  text-align: center;
+  font-family: "URW Chancery L", cursive, serif;
+  color: lightblue;
+}
+
+#desmonth {
+  font-size: 2.5vw;
+  text-align: center;
+  font-family: serif;
+  margin-top: 10%;
+}
+
+#disclaimer {
+  font-size: 1vw;
+  text-align: center;
+  margin-top: 4%;
+  color:black;
+  font-family: serif;
+  font-style: italic;
+}
+
+#designtable {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  margin-bottom: 1%;
+  line-height: normal;
+}
+
+#designtable, .destd {
+  border: none;
+}
+
+.destd {
+  border-bottom: 1px solid #ddd;
+  padding: .2vw;
+  font-size: 1.5vw;
+  color: black;
+  font-family: serif;
+}
+
+.naildespics {
+  padding: 1.03%;
+  width: 30%;
+}
+
+#picbox {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/***************************************** ||  Promotions*/
+#promobox {
+  background-color: #F2F2F2;
+  width: 80%;
+  margin-top: 8%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8%;
+}
+
+.promopic {
+  width: 40%;
+  padding: 4.5%;
+}
+
+/********************************* ||  Contact*/
+#phone {
+  width: 100%
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  resize: vertical
+}
+
+input[type=submit] {
+  color: white;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: lightblue;
+  font-family: serif;
+}
+
+input[type=submit]:hover {
+  background-color: #F2F2F2;
+}
+
+.container {
+  width: 46%;
+  padding: 4%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ||  Travel*/
+#travelinfo {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#travelpic {
+  margin: 10%;
+  width: 50%;
+  opacity: 0.4;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+#travelbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  width: 40%;
+}
+
+#traveltitle {
+  color: lightblue;
+  font-size: 5vw;
+  text-align: center;
+  font-family: "URW Chancery L", cursive, serif;
+}
+
+#traveltext {
+  color: black;
+  font-size: 2vw;
+  text-align: center;
+  font-family: serif;
+}
+/************************ ||  About us*/
+#aboutbox{
+ width: 50%;
+ margin-top: 10%;
+ padding: 5%;
+ background-color: #F2F2F2;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 15%;
+}
+#about{
+  color: lightblue;
+  font-size: 5vw;
+  text-align: center;
+  font-family: "URW Chancery L", cursive, serif;
+}
+
+#abhr{
+  width: 30%;
+  border-top: 1px solid lightblue;
+}
+#abpara{
+  width: 100%;
+  color: black;
+  font-size: 1.9vw;
+  text-align: center;
+  font-family: serif;
+}
